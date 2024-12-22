@@ -1,0 +1,1 @@
+Hi ha una partida carregada amb el nom 'test-game.json', per poder probar la càrrega sense haver de jugar una partida prèviament.
