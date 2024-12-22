@@ -81,16 +81,33 @@ const handleJugada = (jugada) => {
             if(posicio === "dreta") {
                 const playerPosArray = playerPos.split(",")
                 playerPos = `${playerPosArray[0]},${parseInt(playerPosArray[1])+1}`
-                console.log(playerPos)
+                checkPos(playerPos)
+                vides--
             }else if(posicio === "esquerra") {
-
+                const playerPosArray = playerPos.split(",")
+                playerPos = `${playerPosArray[0]},${parseInt(playerPosArray[1])-1}`
+                checkPos(playerPos)
+                vides--
             }else if(posicio === "avall") {
-
+                const playerPosArray = playerPos.split(",")
+                playerPos = `${parseInt(playerPosArray[0])+1},${playerPosArray[1]}`
+                checkPos(playerPos)
+                vides--
             }else if(posicio === "amunt") {
-
+                const playerPosArray = playerPos.split(",")
+                playerPos = `${parseInt(playerPosArray[0])-1},${playerPosArray[1]}`
+                checkPos(playerPos)
+                vides--
+            }
+            if(vides <= 0) {
+                continuePlaying = false
             }
         }
     }
+}
+
+const checkPos = () => {
+    
 }
 
 main()
