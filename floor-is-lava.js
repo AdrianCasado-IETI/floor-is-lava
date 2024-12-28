@@ -143,7 +143,11 @@ const handleJugada = async (jugada) => {
 
 const checkPos = () => {
     positionArray = playerPos.split(",")
-    if(tauler[positionArray[0]][positionArray[1]] === 1 || tauler[positionArray[0]][positionArray[1]] === -1) {
+    if(positionArray[0]<0 || positionArray[0]>=tauler.length || positionArray[1]<0 || positionArray[1]>=tauler[0].length){
+        console.log("Has perdut, has caigut per un penyasegat")
+        vides = 0
+    }
+    else if(tauler[positionArray[0]][positionArray[1]] === 1 || tauler[positionArray[0]][positionArray[1]] === -1) {
         console.log("Has trepitjat lava, perds un punt")
         tauler[positionArray[0]][positionArray[1]] = -1
         vides--;
